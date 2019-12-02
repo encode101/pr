@@ -1,9 +1,5 @@
-<h1>
-  {{title}}
-</h1>
-
-<input type="text" name="name" id="" [(ngModel)] = 'name'> 
-
-{{name}}
-
-<div class="app-server"></div>
+<ul>
+    <li routerLinkActive="activeTab" [routerLinkActiveOptions]={exact: true}><a [routerLink]="[ '/users']">Users</a></li>
+    <li routerLinkActive="activeTab"><a [routerLink]="[ '/profile']">Profile</a></li>
+</ul>
+<router-outlet></router-outlet>
