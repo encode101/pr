@@ -20,30 +20,33 @@
     <ion-card-content>
       <p>
         <a href="/about">About</a>
+        <ion-buttons slot="start">
+          <ion-menu-button autoHide="false"></ion-menu-button>
+        </ion-buttons>
       </p>
     </ion-card-content>
   </ion-card>
 
-  <ion-grid>
+  <!-- <ion-grid>
     <ion-col *ngFor="let category of categories" [ngClass]="{'active': categories.indexOf(category) === catstatus}">{{category}}</ion-col>
-  </ion-grid>
-  {{currentTopis}}
+  </ion-grid> -->
 
   <!-- *** Removable Card -->
 
-  <ion-card *ngFor="let article of articlesList" routerLink="/article-details" (click)="shootData(article)" swipeAll (swipe)="swipeEvent($event)">
+  <ion-card *ngFor="let article of articlesList" routerLink="/article-details">
     <ion-card-header>
-      <ion-card-subtitle>{{article.author}}</ion-card-subtitle>
-      <ion-card-title>{{article.title}}</ion-card-title>
-    </ion-card-header>      
+      <ion-card-subtitle class="author">{{article.author}}</ion-card-subtitle>
+      <ion-card-title class="articleTitle">{{article.title}}</ion-card-title>
+    </ion-card-header>
     <ion-card-content>
-      <img src="{{article.urlToImage}}">
-      <p>{{article.title}}</p>
+      <img class="thumbnail" src="{{article.urlToImage}}">
+      <p>{{article.description}}</p>
+      <p class="author" style="margin: 10px 0 0px 0;">Last Updated: {{article.publishedAt | date}}</p>
     </ion-card-content>
-  </ion-card> 
+  </ion-card>
 
 
 
-  
+
 
 </ion-content>

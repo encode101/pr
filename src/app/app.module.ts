@@ -10,9 +10,10 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IonicSwipeAllModule } from 'ionic-swipe-all';
+import { LeftMenuPanelComponent } from '../app/left-menu-panel/left-menu-panel.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LeftMenuPanelComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, IonicSwipeAllModule],
   providers: [

@@ -15,39 +15,38 @@ export class Tab1Page {
   articlesList: any;
   catstatus = 0;
   categories = ['general', 'technology', 'business', 'health', 'sports'];
-  currentTopis = ""
+  currentTopis: string;
+  list: any;
   constructor(private articles: ArticlesService, private data: DataService, private swipe: IonicSwipeAllModule) {
     this.articles.getArticles(this.categories[0]).subscribe((data) => {
-      console.log(data);
-      const list = data;
-      this.articlesList = list.articles;
+      this.list = data;
+      console.log(this.articlesList)
+      this.articlesList = this.list.articles;
     });
   }
 
   swipeEvent = (event) => {
-    if(event.direction === 4){
-      this.catstatus = this.catstatus-1;
-    }else{
-      this.catstatus = this.catstatus+1;
-    }
+    // if (event.direction === 4) {
+    //   this.catstatus = this.catstatus - 1;
+    // } else {
+    //   this.catstatus = this.catstatus + 1;
+    // }
 
-    if(this.catstatus == -1){
-      this.catstatus = 0;
-      return;
-    }else if(this.catstatus === this.categories.length){
-      this.catstatus = this.categories.length;
-      return;
-    }
+    // if (this.catstatus === -1) {
+    //   this.catstatus = 0;
+    //   return;
+    // } else if (this.catstatus === this.categories.length) {
+    //   this.catstatus = this.categories.length;
+    //   return;
+    // }
 
-    this.articles.getArticles(this.categories[this.catstatus]).subscribe((data) => {
-      console.log(data);
-      const list = data;
-      this.articlesList = list.articles;
-    });
+    // this.articles.getArticles(this.categories[this.catstatus]).subscribe((data) => {
+    //   console.log(data);
+    //   const list = data;
+    //   this.articlesList = this.list.articles;
+    // });
 
-    this.currentTopis = categories[this.catstatus];
-  
-
+    // this.currentTopis = this.categories[this.catstatus];
 
   }
 
