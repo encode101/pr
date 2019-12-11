@@ -1,5 +1,7 @@
 {
   "name": "hem",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

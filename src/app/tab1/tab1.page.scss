@@ -1,4 +1,12 @@
 .welcome-card img {
-  max-height: 35vh;
+  max-height: 40vh;
   overflow: hidden;
 }
+
+.avtar{margin-right: 15px; border: 1px solid #000; border-radius: 0px; width: 50px; height: 50px;}
+.padding5{padding: 5px;}
+
+.pull-right{display: block; float: right;}
+.closeIcon{font-size: 20px;}
+ion-list ion-item{margin: 0px 0px; font-size: 14px; line-height: 25px;}
+.active{color: red;}
